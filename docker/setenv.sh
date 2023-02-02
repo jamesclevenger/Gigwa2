@@ -57,3 +57,8 @@ if [ ! -z "${casOrganization}" ]; then
                 sed -i "s|^casOrganization\s*.*|casOrganization=${casOrganization}|g" /usr/local/tomcat/config/config.properties
         fi
 fi
+
+# sets retry-writes="false" for mongo client on compatibility mode for DocumentDB
+if [ "$DOCUMENT_DB_COMPAT_MODE" = "true" ]; then 
+    sed -i 's|<!-- -->|<mongo:client-settings retry-writes="false" />|g' /usr/local/tomcat/webapps/gigwa/WEB-INF/classes/applicationContext-data.xml
+fi
