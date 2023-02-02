@@ -17,6 +17,7 @@ services:
       MONGO_INITDB_ROOT_USERNAME: yourMongoRootUser
       MONGO_INITDB_ROOT_PASSWORD: yourMongoRootPassword
       HOST_LOCALE: "${LANG}"
+      DOCUMENT_DB_COMPAT_MODE: 'false'
 #     casServerURL: https://sso.cirad.fr:443                # URL of the CAS server to use for Single-Sign-On
 #     enforcedWebapRootUrl: http://${docker0}:8080/gigwa    # Gigwa base-URL for CAS to direct to after login. System will attempt guessing it if not provided, but it's always better to specify it
 #     casOrganization: MyOrganization                       # Not required, will only be displayed on login page if provided
